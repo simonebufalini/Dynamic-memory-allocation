@@ -29,7 +29,7 @@ int main()
             array = (int*)realloc(array, arraySize * sizeof(int));
 
             if (array == NULL){
-                printf("Memory allocation error.")
+                printf("Memory allocation error.");
                 free(array);
                 return 1;
             }
