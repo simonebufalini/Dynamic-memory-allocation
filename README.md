@@ -1,2 +1,2 @@
 # Dynamic-memory-allocation
-Just testing github :)
+Just trying github :)
