@@ -12,6 +12,11 @@ int main()
 
     array = (int*)malloc(arraySize * sizeof(int));
 
+    if (array == NULL){
+        printf("Memory allocation error.");
+        return 1;
+    }
+
     int newElement;
     int index = 0;
     int *temp;
@@ -29,7 +34,7 @@ int main()
             arraySize += EXT;
             temp = (int*)realloc(array, arraySize * sizeof(int));
 
-            if (array == NULL){
+            if (temp == NULL){
                 printf("Memory allocation error.");
                 free(array);
                 return 1;
