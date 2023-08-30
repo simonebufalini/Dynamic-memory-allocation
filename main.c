@@ -14,6 +14,7 @@ int main()
 
     int newElement;
     int index = 0;
+    int *temp;
 
     while(1){
 
@@ -26,13 +27,15 @@ int main()
 
         if (index == arraySize){
             arraySize += EXT;
-            array = (int*)realloc(array, arraySize * sizeof(int));
+            temp = (int*)realloc(array, arraySize * sizeof(int));
 
             if (array == NULL){
                 printf("Memory allocation error.");
                 free(array);
                 return 1;
             }
+            
+            array = temp;
         }
 
         array[index] = newElement;
