@@ -10,7 +10,7 @@ int main()
     size_t arraySize;
     arraySize = INIT_SIZE;
 
-    array = malloc(arraySize * sizeof *array);
+    array = malloc(arraySize * sizeof(*array));
 
     if (array == NULL){
         printf("Memory allocation error.");
@@ -33,7 +33,7 @@ int main()
 
         if (index == arraySize){
             arraySize += EXT;
-            temp = realloc(array, arraySize * sizeof *array);
+            temp = realloc(array, arraySize * sizeof(*array));
 
             if (temp == NULL){
                 printf("Memory allocation error.");
