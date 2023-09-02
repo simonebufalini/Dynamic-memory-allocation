@@ -10,7 +10,7 @@ int main()
     size_t arraySize;
     arraySize = INIT_SIZE;
 
-    array = (int*)malloc(arraySize * sizeof(int));
+    array = malloc(arraySize * sizeof *array);
 
     if (array == NULL){
         printf("Memory allocation error.");
@@ -19,6 +19,7 @@ int main()
 
     int newElement;
     int index = 0;
+
     int *temp;
 
     while(1){
@@ -32,14 +33,14 @@ int main()
 
         if (index == arraySize){
             arraySize += EXT;
-            temp = (int*)realloc(array, arraySize * sizeof(int));
+            temp = realloc(array, arraySize * sizeof *array);
 
             if (temp == NULL){
                 printf("Memory allocation error.");
                 free(array);
                 return 1;
             }
-            
+
             array = temp;
         }
 
@@ -47,8 +48,10 @@ int main()
         index++;
     }
 
+    printf("Numbers entered: ");
+
     for (int i = 0; i < index; i++){
-        printf("%d\n", array[i]);
+        printf("%d\t", array[i]);
     }
 
     free(array);
